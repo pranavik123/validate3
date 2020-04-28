@@ -1,0 +1,133 @@
+<html>
+<head>
+<script language="javascript">
+function vali(){
+var lenp=document.reg.ph.value.length;
+if(document.reg.fname.value=="")
+{
+alert("Please Enter the name");
+document.reg.fname.focus();
+return false;
+}
+else
+if(document.reg.lname.value=="")
+{
+alert("Please enter the last name");
+document.reg.lname.focus();
+return false;
+}
+if(!document.reg.email.value)
+{
+alert("Please enter the valid email id");
+document.reg.email.focus();
+return false;
+}
+if(document.reg.email.value.indexOf("@",0)<0)
+{
+alert("Please enter the valid email id");
+document.reg.email.focus();
+return false;
+}
+if(document.reg.email.value.indexOf(".",0)<0)
+{
+alert("Please enter the valid email id");
+document.reg.email.focus();
+return false;
+}
+if(!document.reg.pwd.value)
+{
+alert("Please enter the  password");
+document.reg.pwd.focus();
+return false;
+}
+if(document.reg.cpwd.value!=document.reg.pwd.value)
+{
+alert("Please enter the same password");
+document.reg.pwd.focus();
+return false;
+}
+if(!document.reg.date.value)
+{
+alert("Please enter the date of birth");
+document.reg.date.focus();
+return false;
+}
+if(document.reg.Gender[0].checked==false && document.reg.Gender[1].checked==false && document.reg.Gender[2].checked==false)
+{
+alert("Please enter the gender");
+document.reg.Gender.focus();
+return false;
+}
+if(lenp!=10)
+{
+alert("Please enter the 10 digit number");
+document.reg.address.focus();
+return false;
+}
+if(document.reg.gfd.value=="")
+{
+alert("Please enter the address");
+document.reg.address.focus();
+return false;
+}
+if(document.reg.sel.value=="")
+{
+alert("Please enter the select the Branch");
+document.reg.sel.focus();
+return false;
+}
+if(document.reg.sel2.value=="")
+{
+alert("Please enter the select the city");
+document.reg.sel2.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+</script>
+</head>
+<body>
+<h1>Student Form</h1>
+<form name="reg"  method="get">
+<b>FIRSTNAME:</b>
+<input type="text" name=fname ><br><br>
+<b>LASTNAME:</b>
+<input type="text" name=lname ><br><br>
+<b>Email:</b>
+<input type="text" name=email ><br><br>
+<b>Password:</b>
+<input type="password" name=pwd ><br><br>
+<b>Confirm Password:</b>
+<input type="password" name=cpwd ><br><br>
+<b>Date of Birth</b>
+<input type="date" name=date><br><br>
+<b>Gender:</b><br>
+<input type="radio" name=Gender value="male" >Male<br>
+<input type="radio" name=Gender value="female" >Female<br>
+<input type="radio" name=Gender value="others" >Others<br>
+<b>Phone No</b>
+<input type="text" name=ph><br><br>
+<b>Address</b><br>
+<textarea rows=5 cols=20 class="textarea" name=gfd ></textarea><br><br>
+<b>Branch</b>
+<select name=sel >
+<option>CSE</option>
+<option>Civil</option>
+<option>MECH</option>
+<option>ECE</option>
+</select>
+<br><br>
+<b>City:</b>
+<select name=sel2>
+<option>Hyderabad</option>
+<option>Mumbai</option>
+<option>Delhi</option>
+</select>
+<br><br>
+<br>
+<div onclick="return vali()" style="color: blue"><u>Submit this form</u></div>
+</form>
+</body>
